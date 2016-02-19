@@ -92,8 +92,8 @@ function formatArgs() {
       + args[0] + '\u001b[3' + c + 'm'
       + ' +' + exports.humanize(this.diff) + '\u001b[0m';
   } else {
-    args[0] = new Date().toUTCString()
-      + ' ' + name + ' ' + args[0];
+    args[0] = new Date().toLocaleString()+' '+String("     " + exports.humanize(this.diff||0)).slice(-5)
+      + String('                     ' + name).slice(-20) + ' ' + args[0];
   }
   return args;
 }
